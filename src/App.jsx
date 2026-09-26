@@ -7,7 +7,10 @@ import React, { useState, useEffect, useRef } from "react";
 // call from the frontend, no API keys anywhere in this file.
 // ---------------------------------------------------------------------------
 
-const API_BASE = "http://127.0.0.1:8000";
+// In development this defaults to your local backend. Once deployed, Vercel
+// will inject VITE_API_BASE (set in its dashboard) pointing at your live
+// Render backend URL instead — no code change needed to switch environments.
+const API_BASE = import.meta.env.VITE_API_BASE || "http://127.0.0.1:8000";
 const FONT_LINK_ID = "dispatch-fonts";
 
 function ensureFonts() {
