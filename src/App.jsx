@@ -289,7 +289,7 @@ export default function Dispatch() {
 function AssistantBlock({ msg, t, onCopy, onRegenerate }) {
   if (msg.isError) {
     return (
-      <div style={{ ...styles.dispatchCard, borderColor: t.border, background: t.card }}>
+      <div style={{ ...styles.dispatchCard, background: t.card }}>
         <div style={{ color: t.errorText, fontSize: 14 }}>{msg.answer}</div>
       </div>
     );
@@ -300,7 +300,7 @@ function AssistantBlock({ msg, t, onCopy, onRegenerate }) {
   const badgeColor = isLive ? t.accent : isHistorical ? t.amber : t.meta;
 
   return (
-    <div style={{ ...styles.dispatchCard, borderColor: t.border, background: t.card }}>
+    <div style={{ ...styles.dispatchCard, background: t.card }}>
       {msg.requiresRetrieval && (
         <div style={{ ...styles.stamp, borderColor: badgeColor, color: badgeColor }}>
           {msg.success ? (
@@ -380,30 +380,30 @@ function AssistantBlock({ msg, t, onCopy, onRegenerate }) {
 
 const THEME = {
   dark: {
-    bg: "#14181F",
-    railBg: "#10131A",
-    card: "#1B2029",
-    userBubble: "#232A36",
-    inputBg: "#1B2029",
-    convActive: "#20262F",
-    text: "#F3F1EA",
-    meta: "#8B909A",
-    border: "#2A303B",
-    accent: "#4FA69C",
-    amber: "#D69A55",
+    bg: "#1C140D",
+    railBg: "#170F09",
+    card: "#28190F",
+    userBubble: "#33200F",
+    inputBg: "#28190F",
+    convActive: "#3A2412",
+    text: "#F5E9DA",
+    meta: "#B69A80",
+    border: "#3A2A18",
+    accent: "#E08A3C",
+    amber: "#F0AC5E",
     errorText: "#E0876F",
   },
   light: {
-    bg: "#F7F4EC",
-    railBg: "#EFEBE0",
+    bg: "#FBF2E7",
+    railBg: "#F5E7D4",
     card: "#FFFFFF",
-    userBubble: "#E9E4D6",
+    userBubble: "#F3DDBF",
     inputBg: "#FFFFFF",
-    convActive: "#E3DECF",
-    text: "#1C1F26",
-    meta: "#6B6459",
-    border: "#DAD4C4",
-    accent: "#3E7C74",
+    convActive: "#EED8B7",
+    text: "#2E1F10",
+    meta: "#8A6E4E",
+    border: "#E8D3AE",
+    accent: "#C9701A",
     amber: "#B6772E",
     errorText: "#B4472E",
   },
@@ -427,7 +427,7 @@ const styles = {
   transcript: { flex: 1, overflowY: "auto", padding: "24px 20px", display: "flex", flexDirection: "column", gap: 16 },
   emptyState: { maxWidth: 480, margin: "40px auto" },
   userBubble: { alignSelf: "flex-end", maxWidth: "78%", padding: "11px 15px", borderRadius: "14px 14px 2px 14px", fontSize: 14.5, lineHeight: 1.5 },
-  dispatchCard: { alignSelf: "flex-start", maxWidth: "86%", border: "1px solid", borderRadius: 4, padding: "16px 18px" },
+  dispatchCard: { alignSelf: "flex-start", maxWidth: "86%", borderRadius: 8, padding: "16px 18px", boxShadow: "0 1px 3px rgba(0,0,0,0.15)" },
   stamp: { display: "inline-flex", alignItems: "center", border: "1px solid", borderRadius: 3, padding: "3px 9px", fontSize: 12, fontWeight: 600, marginBottom: 12 },
   sectionLabel: { fontSize: 11.5, letterSpacing: "0.3px", fontWeight: 600 },
   disagreementBox: { marginTop: 12, padding: "9px 12px", borderLeft: "3px solid", fontSize: 13.5, lineHeight: 1.5 },
